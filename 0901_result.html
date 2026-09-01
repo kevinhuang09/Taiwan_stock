@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>台股除息填息觀察</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root{
+    --bg: #12161C;
+    --surface: #1A2028;
+    --line: #2A323D;
+    --text: #E9EBEF;
+    --text-dim: #8A93A3;
+    --gain: #E5484D;     /* 台股慣例：正分/看漲 = 紅 */
+    --loss: #2FA875;     /* 台股慣例：負分/看跌 = 綠 */
+    --neutral: #8A93A3;
+    --gold: #D4A24C;
+  }
+
+  * { box-sizing: border-box; }
+  body{
+    margin:0; padding: 32px 16px 64px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  .wrap{ max-width: 720px; margin: 0 auto; }
+
+  header{ margin-bottom: 28px; }
+  header .eyebrow{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px; color: var(--gold); letter-spacing: 0.04em;
+  }
+  header h1{
+    font-family: 'Noto Serif TC', serif;
+    font-size: 26px; font-weight: 700; margin: 6px 0 4px;
+  }
+  header .meta{ font-size: 13px; color: var(--text-dim); }
+
+  .summary{
+    display:flex; gap: 20px; margin: 18px 0 28px; flex-wrap: wrap;
+    padding: 14px 16px; background: var(--surface);
+    border: 1px solid var(--line); border-radius: 4px;
+  }
+  .summary .item{ font-size: 13px; color: var(--text-dim); }
+  .summary .item b{ color: var(--text); font-family:'IBM Plex Mono',monospace; font-weight:600; }
+
+  .section-label{
+    font-family: 'Noto Serif TC', serif; font-size: 15px; font-weight: 700;
+    color: var(--text); margin: 28px 0 10px; padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .card{
+    display: flex; gap: 16px;
+    padding: 16px 4px;
+    border-bottom: 1px solid var(--line);
+    align-items: flex-start;
+  }
+  .card:last-child{ border-bottom: none; }
+
+  .score{
+    flex: 0 0 44px; height: 44px; border-radius: 50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family: 'IBM Plex Mono', monospace; font-size: 17px; font-weight: 600;
+    border: 1.5px solid currentColor;
+  }
+  .score.pos{ color: var(--gain); }
+  .score.neg{ color: var(--loss); }
+  .score.zero{ color: var(--neutral); }
+
+  .body{ flex: 1; min-width: 0; }
+  .row1{ display:flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .ticker{ font-family:'IBM Plex Mono',monospace; font-size: 13px; color: var(--text-dim); }
+  .name{ font-size: 16px; font-weight: 700; }
+  .tag{
+    font-size: 11px; padding: 1px 7px; border-radius: 3px;
+    border: 1px solid var(--line); color: var(--text-dim);
+  }
+  .row2{ font-size: 12.5px; color: var(--text-dim); margin-top: 3px; }
+  .reasons{ font-size: 13.5px; margin-top: 8px; line-height: 1.55; }
+  .risk{ font-size: 12.5px; color: var(--text-dim); margin-top: 6px; }
+  .risk b{ color: var(--gold); font-weight: 500; }
+
+  footer{
+    margin-top: 36px; padding-top: 16px; border-top: 1px solid var(--line);
+    font-size: 11.5px; color: var(--text-dim); line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">TAIWAN DIVIDEND · FILL-GAP WATCH</div>
+    <h1>本週除息填息觀察</h1>
+    <div class="meta">資料日期：2026/09/01　·　範圍：2026/09/01 ～ 2026/09/08</div>
+  </header>
+
+  <div class="summary">
+    <div class="item">個股　<b>10</b> 檔</div>
+    <div class="item">ETF　<b>4</b> 檔</div>
+    <div class="item">可留意　<b>3</b> 檔</div>
+    <div class="item">不建議　<b>0</b> 檔</div>
+  </div>
+
+  <div class="section-label">個股</div>
+
+  <div class="card">
+    <div class="score pos">+1</div>
+    <div class="body">
+      <div class="row1"><span class="ticker">6139</span><span class="name">亞翔</span><span class="tag">個股</span></div>
+      <div class="row2">除息日 9/2　·　現金股利 23元　·　殖利率 2.87%</div>
+      <div class="reasons">受惠半導體廠務工程(無塵室建造)訂單滿手，近期月營收年增動能強勁(如5月營收年增逾100%)，財報評分64分優於同業平均46分，今年AI廠房擴建題材帶動股價一度創新高。</div>
+      <div class="risk"><b>風險</b>：殖利率偏低(2.87%)，近期股價震盪、曾出現連續收黑，填息主要靠基本面題材支撐，若AI資本支出題材降溫，動能可能減弱。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="score pos">+1</div>
+    <div class="body">
+      <div class="row1"><span class="ticker">2379</span><span class="name">瑞昱</span><span class="tag">個股</span></div>
+      <div class="row2">除息日 9/8　·　現金股利 25元　·　殖利率 3.36%</div>
+      <div class="reasons">近5年平均填息天數僅約28天，填息紀錄相對穩定；今年1-7月累計營收年增13.31%，加上大盤加權指數近一週上漲3.05%創高，半導體族群氣氛偏多。</div>
+      <div class="risk"><b>風險</b>：單季EPS較去年同期略減(Q2 EPS年增-2.62%)，近5日股價漲幅(+0.7%)落後大盤，短線動能並不特別突出。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="score zero">0</div>
+    <div class="body">
+      <div class="row1"><span class="ticker">3312</span><span class="name">弘憶股</span><span class="tag">個股</span></div>
+      <div class="row2">除息日 9/8　·　現金股利 1.3元　·　殖利率 2.48%</div>
+      <div class="reasons">今日(9/1)盤中一度衝上漲停，短線買盤活躍，但近5日累計漲幅(+0.78%)仍落後大盤，且查無穩定歷史填息紀錄可佐證。</div>
+      <div class="risk"><b>風險</b>：今日漲停偏向短線消息面激勵，若買盤未能延續，除息後可能出現獲利了結賣壓，資料不足僅供參考。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="score zero">0</div>
+    <div class="body">
+      <div class="row1"><span class="ticker">2706</span><span class="name">第一店</span><span class="tag">個股</span></div>
+      <div class="row2">除息日 9/8　·　現金股利 0.35元　·　殖利率 2.8%</div>
+      <div class="reasons">近5日股價上漲0.8%，惟漲幅明顯落後大盤(+3.05%)，觀光餐旅類股目前缺乏明顯利多或利空消息。</div>
+      <div class="risk"><b>風險</b>：查無穩定歷史填息天數紀錄，公開資訊有限，建議留意公司後續營收公告。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="score zero">0</div>
+    <div class="body">
+      <div class="row1"><span class="ticker">8473</span><span class="name">山林水</span><span class="tag">個股</span></div>
+      <div class="row2">除權息日 9/8　·　合計股利 1.84元(現金0.78+股票1.06)　·　以9/1收盤價估算合計殖利率約4%</div>
+      <div class="reasons">水資源基礎建設概念股，業務性質相對防禦，但本次查無明確近期股價動能或歷史填息(權)天數等佐證資料。</div>
+      <div class="risk"><b>風險</b>：因含股票股利，除權息參考價降幅較大(46.30→41.16元)，填權速度需另計，資料不足僅供參考。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="score zero">0</div>
+    <div class="body">
+      <div class="row1"><span class="ticker">3052</span><span class="name">夆典</span><span class="tag">個股</span></div>
+      <div class="row2">除息日 9/1(今日已除息)　·　現金股利 0.6元　·　殖利率約5.36%(以8/25收盤11.20元估算)</div>
+      <div class="reasons">公司規模小、市場關注度有限，除息當下查無明顯強弱動能訊號，公開分析資料稀缺。</div>
+      <div class="risk"><b>風險</b>：歷史填息紀錄與近期基本面消息均查無充分資訊，僅供參考。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="score zero">0</div>
+    <div class="body">
+      <div class="row1"><span class="ticker">2701</span><span class="name">萬企</span><span class="tag">個股</span></div>
+      <div class="row2">除息日 9/1(今日已除息)　·　現金股利 0.28元　·　殖利率 2.63%</div>
+      <div class="reasons">除息當下股價持平，無明顯強弱訊號；市場關注度低，可查得的近期動能與消息面資訊有限。</div>
+      <div class="risk"><b>風險</b>：歷史填息紀錄與基本面資訊不足，僅供參考。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="score neg">-1</div>
+    <div class="body">
+      <div class="row1"><span class="ticker">3622</span><span class="name">洋華</span><span class="tag">個股</span></div>
+      <div class="row2">除息日 9/8　·　現金股利 3.2元　·　殖利率 6.03%</div>
+      <div class="reasons">殖利率不算低，但近5日股價下跌1.3%，明顯落後大盤(+3.05%)，除息前動能偏弱。</div>
+      <div class="risk"><b>風險</b>：高殖利率搭配弱勢股價，需留意是否為股價下跌推高殖利率的「利率陷阱」；查無穩定歷史填息紀錄佐證。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="score neg">-1</div>
+    <div class="body">
+      <div class="row1"><span class="ticker">2442</span><span class="name">新美齊</span><span class="tag">個股</span></div>
+      <div class="row2">除權息日 9/8　·　合計股利 2.74元(現金2.03+股票0.71)　·　殖利率 10.5%</div>
+      <div class="reasons">公司轉型建商後指標建案「畫世代」完銷率高，中長期基本面尚可，惟本次殖利率異常偏高(10.5%)，且近5日股價下跌1.53%，落後大盤。</div>
+      <div class="risk"><b>風險</b>：過往現金股利發放率僅約3成，本次含股票股利有稀釋效果；高殖利率加上股價偏弱，屬典型「利率陷阱」樣態，且查無穩定歷史填息紀錄。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="score neg">-1</div>
+    <div class="body">
+      <div class="row1"><span class="ticker">9933</span><span class="name">中鼎</span><span class="tag">個股</span></div>
+      <div class="row2">除權息日 9/8　·　合計股利 0.95元(現金0.76+股票0.19)　·　殖利率 1.86%</div>
+      <div class="reasons">近期股價連3日下跌(-3.79%)，財報評分(45分)低於同業平均，動能偏弱；殖利率也不高，填息誘因有限。</div>
+      <div class="risk"><b>風險</b>：8月中公司調整股利配股配息比率，且有電廠火災求償訴訟等未明朗消息，基本面能見度尚待觀察。</div>
+    </div>
+  </div>
+
+  <div class="section-label">ETF</div>
+
+  <div class="card">
+    <div class="score pos">+2</div>
+    <div class="body">
+      <div class="row1"><span class="ticker">00940</span><span class="name">元大台灣價值高息</span><span class="tag">ETF</span></div>
+      <div class="row2">除息日 9/5　·　本期配息 0.05元(連續第3個月持平)　·　單月配息殖利率約0.41%</div>
+      <div class="reasons">配息連續3個月維持同一水準，過去歷次除息多能順利完成填息(甚至曾單日秒填息)，且成分股(華碩、聯詠、瑞昱、富邦金等)與大盤近期表現強勢、指數創高有利填息。</div>
+      <div class="risk"><b>風險</b>：配息主要來自成分股現金股息，屬較「真實」的股息型配息，但月配息率偏低，實際年化報酬仍需另計。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="score zero">0</div>
+    <div class="body">
+      <div class="row1"><span class="ticker">00939</span><span class="name">統一台灣高息動能</span><span class="tag">ETF</span></div>
+      <div class="row2">除息日 9/1(今日已除息)　·　本期配息約0.063元</div>
+      <div class="reasons">該ETF專門鎖定6-9月除權息高峰期提前布局成分股，本身策略即以搶息為主，惟本次查無進一步近期淨值與追蹤指數表現細節佐證。</div>
+      <div class="risk"><b>風險</b>：除息潮結束後策略將轉為布局成長股，配息可持續性與策略轉換時機需留意，資料有限僅供參考。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="score zero">0</div>
+    <div class="body">
+      <div class="row1"><span class="ticker">00400A</span><span class="name">主動國泰動能高息</span><span class="tag">ETF</span></div>
+      <div class="row2">除息日 9/7　·　本期配息 0.12元(已連續第3個月持平)</div>
+      <div class="reasons">配息金額連續3個月持平，顯示短期配息穩定度尚可，但查無明確配息組成(是否含選擇權權利金)資訊可供判斷可持續性。</div>
+      <div class="risk"><b>風險</b>：屬主動式高息ETF，配息來源與可持續性尚待查證，年化配息率換算後居於中段水準，非特別突出。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="score zero">0</div>
+    <div class="body">
+      <div class="row1"><span class="ticker">00406A</span><span class="name">主動中信台灣收益</span><span class="tag">ETF</span></div>
+      <div class="row2">除息日 9/2　·　本期配息 0.138元(較上期0.128元調升)　·　預估年化配息率約17%</div>
+      <div class="reasons">受惠台灣經濟成長預測上修與AI題材，搭配掩護性買權策略，權利金收入增加帶動本期配息創高。</div>
+      <div class="risk"><b>風險</b>：上一期收益分配組成100%來自選擇權權利金、非成分股股息，長期依賴權利金配息會侵蝕淨值；年化配息率17%明顯偏高，可能為短期灌水，不宜視為長期可持續水準。</div>
+    </div>
+  </div>
+
+  <footer>
+    ⚠️ 以上分析基於公開資訊與歷史統計，僅供參考，不構成投資建議。填息與否受大盤、產業、公司基本面等多重因素影響，
+    過去填息紀錄不保證未來表現，投資人應自行判斷並承擔風險。<br>
+    分數說明：+3~+1 代表填息(權)機率偏高、風險相對可控；0 代表機會與風險相當或資料不足；-1~-3 代表填息(權)機率偏低或有明確風險，分數越低風險越高。
+    台股慣例採「紅漲綠跌」，本頁配色沿用此慣例（正分＝紅、負分＝綠），與美股慣例相反，請留意。
+  </footer>
+
+</div>
+</body>
+</html>
