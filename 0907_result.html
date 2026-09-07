@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>台股除息填息觀察</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root{
+    --bg: #12161C;
+    --surface: #1A2028;
+    --line: #2A323D;
+    --text: #E9EBEF;
+    --text-dim: #8A93A3;
+    --gain: #E5484D;
+    --loss: #2FA875;
+    --neutral: #8A93A3;
+    --gold: #D4A24C;
+  }
+
+  * { box-sizing: border-box; }
+  body{
+    margin:0; padding: 32px 16px 64px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  .wrap{ max-width: 720px; margin: 0 auto; }
+
+  header{ margin-bottom: 28px; }
+  header .eyebrow{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px; color: var(--gold); letter-spacing: 0.04em;
+  }
+  header h1{
+    font-family: 'Noto Serif TC', serif;
+    font-size: 26px; font-weight: 700; margin: 6px 0 4px;
+  }
+  header .meta{ font-size: 13px; color: var(--text-dim); }
+
+  .summary{
+    display:flex; gap: 20px; margin: 18px 0 28px; flex-wrap: wrap;
+    padding: 14px 16px; background: var(--surface);
+    border: 1px solid var(--line); border-radius: 4px;
+  }
+  .summary .item{ font-size: 13px; color: var(--text-dim); }
+  .summary .item b{ color: var(--text); font-family:'IBM Plex Mono',monospace; font-weight:600; }
+
+  .section-label{
+    font-family: 'Noto Serif TC', serif; font-size: 15px; font-weight: 700;
+    color: var(--text); margin: 28px 0 10px; padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-sub{
+    font-size: 12px; color: var(--text-dim); margin: -4px 0 14px;
+  }
+
+  .card{
+    display: flex; gap: 16px;
+    padding: 16px 4px;
+    border-bottom: 1px solid var(--line);
+    align-items: flex-start;
+  }
+  .card:last-child{ border-bottom: none; }
+
+  .score{
+    flex: 0 0 44px; height: 44px; border-radius: 50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family: 'IBM Plex Mono', monospace; font-size: 17px; font-weight: 600;
+    border: 1.5px solid currentColor;
+  }
+  .score.pos{ color: var(--gain); }
+  .score.neg{ color: var(--loss); }
+  .score.zero{ color: var(--neutral); }
+
+  .body{ flex: 1; min-width: 0; }
+  .row1{ display:flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .ticker{ font-family:'IBM Plex Mono',monospace; font-size: 13px; color: var(--text-dim); }
+  .name{ font-size: 16px; font-weight: 700; }
+  .tag{
+    font-size: 11px; padding: 1px 7px; border-radius: 3px;
+    border: 1px solid var(--line); color: var(--text-dim);
+  }
+  .row2{ font-size: 12.5px; color: var(--text-dim); margin-top: 3px; }
+  .reasons{ font-size: 13.5px; margin-top: 8px; line-height: 1.55; }
+  .risk{ font-size: 12.5px; color: var(--text-dim); margin-top: 6px; }
+  .risk b{ color: var(--gold); font-weight: 500; }
+
+  .lite-table{ width: 100%; border-collapse: collapse; font-size: 13px; }
+  .lite-table th{
+    text-align: left; font-weight: 500; color: var(--text-dim);
+    font-size: 11.5px; padding: 6px 8px; border-bottom: 1px solid var(--line);
+  }
+  .lite-table td{
+    padding: 9px 8px; border-bottom: 1px solid var(--line); color: var(--text);
+  }
+  .lite-table td.ticker-cell{ font-family:'IBM Plex Mono',monospace; color: var(--text-dim); }
+  .lite-table tr:last-child td{ border-bottom: none; }
+
+  footer{
+    margin-top: 36px; padding-top: 16px; border-top: 1px solid var(--line);
+    font-size: 11.5px; color: var(--text-dim); line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">TAIWAN DIVIDEND · FILL-GAP WATCH</div>
+    <h1>本週除息填息觀察</h1>
+    <div class="meta">資料日期：2026/09/07　·　範圍：2026/09/07 ～ 2026/09/16(近7天內僅8檔，額外納入9/15-16以利參考，已標註)</div>
+  </header>
+
+  <div class="summary">
+    <div class="item">已深入分析　<b>2</b> 檔</div>
+    <div class="item">資料有限(未評分)　<b>10</b> 檔</div>
+    <div class="item">可留意　<b>2</b> 檔</div>
+  </div>
+
+  <div class="section-label">個股｜已深入分析</div>
+  <div class="section-sub">已查證近期股價動能、法人籌碼、基本面消息或歷史填息紀錄</div>
+
+  <div class="card">
+    <div class="score zero">0</div>
+    <div class="body">
+      <div class="row1"><span class="ticker">1268</span><span class="name">漢來美食</span><span class="tag">個股</span></div>
+      <div class="row2">除息日 9/7　·　現金股利 8元　·　殖利率 4.68%</div>
+      <div class="reasons">展店效益顯現，今年首季EPS寫新高紀錄，持續插旗拓點，中長期基本面題材正向。</div>
+      <div class="risk"><b>風險</b>：財報評分約55分僅接近同業平均，且近日股價出現連續下跌，短線動能與基本面題材出現背離，除息前追高需留意拉回風險。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="score pos">+1</div>
+    <div class="body">
+      <div class="row1"><span class="ticker">2330</span><span class="name">台積電</span><span class="tag">個股</span><span class="tag">9/16除息，超出7天範圍</span></div>
+      <div class="row2">除息日 9/16　·　現金股利 7元　·　殖利率僅0.28%</div>
+      <div class="reasons">財報評分高達91分(平均90分)，處於歷史高水位；受惠AI資本支出熱潮，過去一年股價累計漲幅逾125%，逼近52週高點；本季配息維持7元並首次提供外資美元股利選擇，法人買盤動能強勁。</div>
+      <div class="risk"><b>風險</b>：殖利率極低(0.28%)，填息與否對存股族意義不大，主要看點在於股價本身趨勢而非填息缺口；股價已逼近歷史高檔，短線震盪(近期曾單日下跌逾2%)不可忽視，若AI資本支出題材降溫或美國關稅政策影響毛利，須留意評價修正風險。</div>
+    </div>
+  </div>
+
+  <div class="section-label">個股｜資料有限(未評分)</div>
+  <div class="section-sub">受限查證時間，僅列除息基本資訊，未能取得足夠的股價動能/籌碼/歷史填息數據</div>
+
+  <table class="lite-table">
+    <tr><th>日期</th><th>代號</th><th>名稱</th><th>股利</th><th>殖利率</th></tr>
+    <tr><td>9/7</td><td class="ticker-cell">1466</td><td>聚隆</td><td>0.20</td><td>1.28%</td></tr>
+    <tr><td>9/7</td><td class="ticker-cell">5254</td><td>欣訊科技</td><td>2.00</td><td>4.58%</td></tr>
+    <tr><td>9/7</td><td class="ticker-cell">7738</td><td>東聯互動</td><td>10.00</td><td>5.95%</td></tr>
+    <tr><td>9/7</td><td class="ticker-cell">8099</td><td>大世科</td><td>2.10</td><td>3.61%</td></tr>
+    <tr><td>9/15</td><td class="ticker-cell">6924</td><td>榮惠-KY創</td><td>3.50</td><td>2.80%</td></tr>
+    <tr><td>9/16</td><td class="ticker-cell">1599</td><td>宏佳騰</td><td>0.50</td><td>2.17%</td></tr>
+    <tr><td>9/16</td><td class="ticker-cell">1517</td><td>利奇</td><td>0.20</td><td>1.87%</td></tr>
+    <tr><td>9/17</td><td class="ticker-cell">4420</td><td>光明</td><td>2.00</td><td>5.16%</td></tr>
+    <tr><td>9/17</td><td class="ticker-cell">5306</td><td>桂盟</td><td>1.07</td><td>1.15%</td></tr>
+    <tr><td>9/17</td><td class="ticker-cell">6707</td><td>富基電通(權息)</td><td>0.50</td><td>1.45%</td></tr>
+  </table>
+
+  <footer>
+    ⚠️ 以上分析基於公開資訊與歷史統計，僅供參考，不構成投資建議。填息與否受大盤、產業、公司基本面等多重因素影響，
+    過去填息紀錄不保證未來表現，投資人應自行判斷並承擔風險。<br>
+    分數說明：+3~+1 代表填息(權)機率偏高、風險相對可控；0 代表機會與風險相當或資料不足；-1~-3 代表填息(權)機率偏低或有明確風險，分數越低風險越高。
+    台股慣例採「紅漲綠跌」，本頁配色沿用此慣例（正分＝紅、負分＝綠），與美股慣例相反，請留意。<br>
+    本期查證期間HiStock網站顯示9/8～9/14無新增個股除權息案件，故額外收錄9/15～9/17資料供參考，已於標題與個別卡片註明。
+    「資料有限」區塊之個股因查證時間限制，僅列示除息基本資訊，未經過近期股價動能、籌碼與歷史填息紀錄的完整查證，請自行進一步確認後再做判斷。
+  </footer>
+
+</div>
+</body>
+</html>
