@@ -20,9 +20,8 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          prompt: "/taiwan-stock"
-          claude_args: |
-            --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebFetch,WebSearch"
+          prompt: "請執行台灣股票每日除權息與股利報表產出任務，更新目錄下的相關檔案。"
+          claude_args: "--dangerously-skip-permissions --max-steps 15"
 
       - name: Commit and push report
         run: |
