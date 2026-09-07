@@ -1,0 +1,36 @@
+name: Daily Dividend Report
+
+on:
+  schedule:
+    # 01:00 UTC = 09:00 Asia/Taipei (UTC+8)
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+
+jobs:
+  daily-dividend-report:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Claude Code
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: "/taiwan-stock"
+          claude_args: |
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebFetch,WebSearch"
+
+      - name: Commit and push report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Daily dividend report $(TZ='Asia/Taipei' date +'%Y-%m-%d')"
+            git push
+          fi
